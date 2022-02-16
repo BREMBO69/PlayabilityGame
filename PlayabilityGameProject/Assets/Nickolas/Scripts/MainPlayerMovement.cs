@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainPlayerMovement : MonoBehaviour
 {
@@ -14,13 +16,23 @@ public class MainPlayerMovement : MonoBehaviour
     public float numberOfJumps = 0.0f;
     public float maxJumps = 1.0f;
     public bool limitJumps;
+    public GameObject buttonAbility;
     private Rigidbody rb;
+
+    private bool isCollided;
+
+    public bool IsCollided
+    {
+        get { return isCollided; }
+    }
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
+        buttonAbility.SetActive(false);
     }
+
 
     void Update()
     {
@@ -41,9 +53,14 @@ public class MainPlayerMovement : MonoBehaviour
         {
             if (Input.GetButtonDown("Jump"))
             {
-                rb.velocity = (Vector3.up * jumpHeight);
+                rb.velocity = Vector3.up * jumpHeight;
                 numberOfJumps += 1;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            maxJumps = 2.0f;
         }
     }
 
@@ -51,10 +68,23 @@ public class MainPlayerMovement : MonoBehaviour
     {
         limitJumps = true;
         numberOfJumps = 0;
+
+        if (other.gameObject.tag == "ResetAbility")
+        {
+            isCollided = true;
+            buttonAbility.SetActive(true);
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+        }
     }
     void OnCollisionExit(Collision other)
     {
 
+    }
+    public void JumpVoid()
+    {
+        maxJumps = 1.0f;
+        buttonAbility.SetActive(false);
     }
 }
 
