@@ -19,7 +19,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            playerHealth = playerHealth;
+
         }
     }
     void OnCollisionExit(Collision other)

@@ -19,6 +19,8 @@ public class MainPlayerMovement : MonoBehaviour
     public GameObject buttonAbility;
     private Rigidbody rb;
 
+    public bool reversedControl = false;
+
     private bool isCollided;
 
     public bool IsCollided
@@ -36,13 +38,27 @@ public class MainPlayerMovement : MonoBehaviour
 
     void Update()
     {
-        vertical = Input.GetAxis("Vertical");
-        horizontal = Input.GetAxis("Horizontal");
+        if (reversedControl == false)
+        {
+            vertical = Input.GetAxis("Vertical");
+            horizontal = Input.GetAxis("Horizontal");
 
-        move.x = horizontal;
-        move.z = vertical;
+            move.x = horizontal;
+            move.z = vertical;
 
-        GetComponent<Transform>().Translate(move * movementSpeed * Time.deltaTime);
+            GetComponent<Transform>().Translate(move * movementSpeed * Time.deltaTime);
+        }
+
+        else
+        {
+            vertical = Input.GetAxis("Vertical");
+            horizontal = Input.GetAxis("Horizontal");
+
+            move.z = horizontal;
+            move.x = vertical;
+
+            GetComponent<Transform>().Translate(move * movementSpeed * Time.deltaTime);
+        }
 
         if (numberOfJumps > maxJumps - 1)
         {
@@ -61,6 +77,18 @@ public class MainPlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
             maxJumps = 2.0f;
+        }
+
+        if (reversedControl== false && Input.GetKeyDown(KeyCode.R))
+        {
+            print("Control Reversed");
+            reversedControl = true;
+        }
+
+        else if (reversedControl == true && Input.GetKeyDown(KeyCode.R))
+        {
+            print("Control Reversed Back");
+            reversedControl = false;
         }
     }
 
