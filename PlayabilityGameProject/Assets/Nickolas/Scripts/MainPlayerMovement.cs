@@ -104,6 +104,11 @@ public class MainPlayerMovement : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
         }
+
+        else if (other.gameObject.tag == "Bullet")
+        {
+            movementSpeed = movementSpeed * 2;
+        }
     }
     void OnCollisionExit(Collision other)
     {
