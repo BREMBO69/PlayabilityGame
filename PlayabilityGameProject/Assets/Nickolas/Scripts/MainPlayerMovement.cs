@@ -16,7 +16,7 @@ public class MainPlayerMovement : MonoBehaviour
     public float numberOfJumps = 0.0f;
     public float maxJumps = 1.0f;
     public bool limitJumps;
-    public GameObject buttonAbility;
+    public GameObject abilityMenu;
     private Rigidbody rb;
 
     public bool reversedControl = false;
@@ -32,7 +32,7 @@ public class MainPlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
-        buttonAbility.SetActive(false);
+        abilityMenu.SetActive(false);
     }
 
 
@@ -100,7 +100,7 @@ public class MainPlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "ResetAbility")
         {
             isCollided = true;
-            buttonAbility.SetActive(true);
+            abilityMenu.SetActive(true);
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
         }
@@ -109,10 +109,34 @@ public class MainPlayerMovement : MonoBehaviour
     {
 
     }
-    public void JumpVoid()
+    
+    //ABILITY VOIDS
+
+    public void Jump2xAbility()
     {
         maxJumps = 1.0f;
-        buttonAbility.SetActive(false);
+        abilityMenu.SetActive(false);
+    }
+
+    public void SwitchControlsAbility()
+    {
+        if(reversedControl == false)
+        {
+            reversedControl = true;
+            abilityMenu.SetActive(false);
+        }
+
+        else
+        {
+            reversedControl = false;
+            abilityMenu.SetActive(false);
+        }
+    }
+
+    public void SpeedAbility()
+    {
+        movementSpeed = 10;
+        abilityMenu.SetActive(false);
     }
 }
 
