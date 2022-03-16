@@ -119,7 +119,7 @@ public class MainPlayerMovement : MonoBehaviour
 
     public void Jump2xAbility()
     {
-        maxJumps = 1.0f;
+        maxJumps = 2.0f;
         abilityMenu.SetActive(false);
     }
 
