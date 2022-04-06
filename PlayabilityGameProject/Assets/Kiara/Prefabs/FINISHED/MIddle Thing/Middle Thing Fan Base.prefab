@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7913346137659472730}
   - component: {fileID: 6520651474772030719}
   - component: {fileID: 9050817697125302325}
+  - component: {fileID: -5493212171634939407}
   m_Layer: 0
   m_Name: Middle Thing Fan Base
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-5493212171634939407
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7393233619056501216}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.587627, y: 26.561436, z: 0.79012364}
+  m_Center: {x: -0.0000019073486, y: 13.280718, z: -0.014711946}

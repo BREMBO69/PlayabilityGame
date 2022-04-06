@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7067536353498284967}
   - component: {fileID: 6177589912211278850}
   - component: {fileID: 8241519159497930952}
+  - component: {fileID: 5064653957264102880}
   m_Layer: 0
   m_Name: Middle Thing Side 2
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5064653957264102880
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7592856158832728349}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -613200878065603006, guid: e1b28589946b19f43ab6b63b0580747c, type: 3}
