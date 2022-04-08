@@ -21,7 +21,7 @@ public class CombatEnemy : MonoBehaviour
     {
         if (onRange)
         {
-            Rigidbody bullet = (Rigidbody)Instantiate(projectile, transform.position + new Vector3(0,2,0) + transform.forward, transform.rotation);
+            Rigidbody bullet = (Rigidbody)Instantiate(projectile, transform.position + new Vector3(0,1,0) + transform.forward, transform.rotation);
             bullet.AddForce(transform.forward * bulletImpulse, ForceMode.Impulse);
             Destroy(bullet.gameObject, 2);
         }
