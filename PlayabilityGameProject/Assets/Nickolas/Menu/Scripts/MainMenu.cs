@@ -48,6 +48,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Game");
         Time.timeScale = 1f;
     }
+
+    public void PlayArtShowCase() 
+    {
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1f;
+    }
     public void QuitGame()
     {
         Debug.Log("You left the game!");

@@ -9,6 +9,7 @@ TagManager:
   - SpawnPoint
   - AbilityBox
   - Enemy
+  - AnimationLocations
   layers:
   - Default
   - TransparentFX
