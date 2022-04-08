@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1320758906270409842}
   - component: {fileID: 1320758906270409854}
   - component: {fileID: 1320758906270409849}
-  - component: {fileID: 1320758906270409848}
   m_Layer: 0
   m_Name: MainPlayer 2
   m_TagString: Player
@@ -136,20 +135,10 @@ MonoBehaviour:
   maxJumps: 1
   limitJumps: 0
   abilityMenu: {fileID: 2813785161065475458, guid: 66cd91b24c658ed469c9cecc70d03a10, type: 3}
-  reversedControl: 0
-  abilityJump: 0
---- !u!114 &1320758906270409848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1320758906270409843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d0a6575aede6ae4fb6bd666aaa1f2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  reversedControlAbility: 0
+  jumpHeightAbility: 0
+  doubleJumpAbility: 0
+  speedAbility: 0
   playerHP: 100
   timesDied: 0
   respawnPoint: {fileID: 0}
