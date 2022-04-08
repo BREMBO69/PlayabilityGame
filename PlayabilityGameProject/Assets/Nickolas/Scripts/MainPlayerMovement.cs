@@ -28,6 +28,12 @@ public class MainPlayerMovement : MonoBehaviour
     public bool speedAbility = false;
     public bool sprintAbility = false;
 
+    public GameObject ability1;
+    public GameObject ability2;
+    public GameObject ability3;
+    public GameObject ability4;
+    public GameObject ability5;
+
     [Header("Player Health")]
     public int playerHP = 100;
     public int timesDied = 0;
@@ -156,10 +162,16 @@ public class MainPlayerMovement : MonoBehaviour
             playerHP = playerHP - 5;
         }
 
-        if (other.gameObject.tag == "AbilityBox")
+        if (other.gameObject.tag == "AbilityBox" && timesDied == 0)
         {
             isCollided = true;
             abilityMenu.SetActive(true);
+            ability1.SetActive(true);
+            ability2.SetActive(true);
+            ability3.SetActive(true);
+            ability4.SetActive(false);
+            ability5.SetActive(false);
+
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
         }
