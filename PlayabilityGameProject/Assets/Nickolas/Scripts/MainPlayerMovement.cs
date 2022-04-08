@@ -132,16 +132,10 @@ public class MainPlayerMovement : MonoBehaviour
             }
         }
 
-        if (reversedControlAbility== false && Input.GetKeyDown(KeyCode.R))
+        if (reversedControlAbility== false && playerHP< 55)
         {
             print("Control Reversed");
             reversedControlAbility = true;
-        }
-
-        else if (reversedControlAbility == true && Input.GetKeyDown(KeyCode.R))
-        {
-            print("Control Reversed Back");
-            reversedControlAbility = false;
         }
 
         if (playerHP <= 0)
@@ -162,23 +156,46 @@ public class MainPlayerMovement : MonoBehaviour
             playerHP = playerHP - 5;
         }
 
-        if (other.gameObject.tag == "AbilityBox" && timesDied == 0)
+        if (other.gameObject.tag == "AbilityBox" && timesDied == 0 && reversedControlAbility == false)
         {
             isCollided = true;
             abilityMenu.SetActive(true);
             ability1.SetActive(true);
-            ability2.SetActive(true);
+            ability2.SetActive(false);
             ability3.SetActive(true);
-            ability4.SetActive(false);
+            ability4.SetActive(true);
             ability5.SetActive(false);
 
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
         }
 
-        else if (other.gameObject.tag == "Bullet")
+        if(other.gameObject.tag == "AbilityBox" && timesDied == 1 && reversedControlAbility ==false)
         {
+            isCollided = true;
+            abilityMenu.SetActive(true);
+            ability1.SetActive(true);
+            ability2.SetActive(false);
+            ability3.SetActive(true);
+            ability4.SetActive(false);
+            ability5.SetActive(true);
 
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+        }
+
+        if (other.gameObject.tag == "AbilityBox" && timesDied == 0 && reversedControlAbility == true)
+        {
+            isCollided = true;
+            abilityMenu.SetActive(true);
+            ability1.SetActive(false);
+            ability2.SetActive(true);
+            ability3.SetActive(true);
+            ability4.SetActive(true);
+            ability5.SetActive(false);
+
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
         }
     }
     void OnCollisionExit(Collision other)
