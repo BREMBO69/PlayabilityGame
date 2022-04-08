@@ -20,6 +20,9 @@ public class MainPlayerMovement : MonoBehaviour
     public GameObject abilityMenu;
     private Rigidbody rb;
 
+    public GameObject leftBurst;
+    public GameObject rightBurst;
+
     //Ability Checkers
     [Header("Abilities")]
     public bool reversedControlAbility = false;
@@ -27,12 +30,14 @@ public class MainPlayerMovement : MonoBehaviour
     public bool doubleJumpAbility = false;
     public bool speedAbility = false;
     public bool sprintAbility = false;
+    public bool burstAbility = false;
 
     public GameObject ability1;
     public GameObject ability2;
     public GameObject ability3;
     public GameObject ability4;
     public GameObject ability5;
+    public GameObject ability6;
 
     [Header("Player Health")]
     public int playerHP = 100;
@@ -51,6 +56,9 @@ public class MainPlayerMovement : MonoBehaviour
         Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
         abilityMenu.SetActive(false);
+
+        leftBurst.SetActive(false);
+        rightBurst.SetActive(false);
     }
 
 
@@ -140,6 +148,15 @@ public class MainPlayerMovement : MonoBehaviour
 
         if (playerHP <= 0)
         {
+            reversedControlAbility = false;
+            jumpHeightAbility = false;
+            doubleJumpAbility = false;
+            speedAbility = false;
+            sprintAbility = false;
+            burstAbility = false;
+            leftBurst.SetActive(false);
+            rightBurst.SetActive(false);
+            
             playerHP = 100;
             transform.position = respawnPoint.transform.position;
             timesDied++;
@@ -165,6 +182,7 @@ public class MainPlayerMovement : MonoBehaviour
             ability3.SetActive(true);
             ability4.SetActive(true);
             ability5.SetActive(false);
+            ability6.SetActive(true);
 
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
@@ -179,6 +197,7 @@ public class MainPlayerMovement : MonoBehaviour
             ability3.SetActive(true);
             ability4.SetActive(false);
             ability5.SetActive(true);
+            ability6.SetActive(true);
 
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
@@ -193,6 +212,7 @@ public class MainPlayerMovement : MonoBehaviour
             ability3.SetActive(true);
             ability4.SetActive(true);
             ability5.SetActive(false);
+            ability6.SetActive(true);
 
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
@@ -244,6 +264,14 @@ public class MainPlayerMovement : MonoBehaviour
     public void SprintAbility()
     {
         sprintAbility = true;
+        abilityMenu.SetActive(false);
+    }
+
+    public void WeaponBurst()
+    {
+        burstAbility = true;
+        leftBurst.SetActive(true);
+        rightBurst.SetActive(true);
         abilityMenu.SetActive(false);
     }
 }
