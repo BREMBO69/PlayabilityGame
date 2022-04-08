@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public int playerHP = 100;
+    public int timesDied = 0;
+    public GameObject respawnPoint;
     void Start()
     {
         
@@ -14,8 +16,10 @@ public class PlayerHealth : MonoBehaviour
     {
         if(playerHP <= 0)
         {
-            playerHP = 0;
-            Destroy(GameObject.FindGameObjectWithTag("Player"));
+            playerHP = 100;
+            //Destroy(GameObject.FindGameObjectWithTag("Player"));
+            transform.position = respawnPoint.transform.position;
+            timesDied++;
         }
     }
     void OnCollisionEnter(Collision other)

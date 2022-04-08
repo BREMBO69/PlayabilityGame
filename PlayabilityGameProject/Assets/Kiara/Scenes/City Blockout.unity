@@ -9312,6 +9312,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AbilityCube
       objectReference: {fileID: 0}
+    - target: {fileID: 4720005803743857253, guid: f0e1871edf21e254e8a8e68cf9d9af12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4720005803743857257, guid: f0e1871edf21e254e8a8e68cf9d9af12, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -14739,6 +14743,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasAbilityMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 2813785161065475458, guid: 66cd91b24c658ed469c9cecc70d03a10, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2813785161065475462, guid: 66cd91b24c658ed469c9cecc70d03a10, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -16094,6 +16102,10 @@ PrefabInstance:
     - target: {fileID: 1021890575361876585, guid: 4e6fcfef70e3e1d419e55115b66ad78a, type: 3}
       propertyPath: m_Name
       value: MainPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021890575361876585, guid: 4e6fcfef70e3e1d419e55115b66ad78a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e6fcfef70e3e1d419e55115b66ad78a, type: 3}
@@ -22850,6 +22862,10 @@ PrefabInstance:
     - target: {fileID: 4770962308779225553, guid: 567b6dc4063ca084cae7958b22ae9878, type: 3}
       propertyPath: m_Name
       value: EventSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770962308779225553, guid: 567b6dc4063ca084cae7958b22ae9878, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4770962308779225554, guid: 567b6dc4063ca084cae7958b22ae9878, type: 3}
       propertyPath: m_RootOrder
@@ -33101,6 +33117,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 4155013383737245906, guid: e03a37b8b8165d74d86927dac8951161, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4155013383737245912, guid: e03a37b8b8165d74d86927dac8951161, type: 3}
       propertyPath: mainPlayer
       value: 
@@ -37732,8 +37752,8 @@ Transform:
   - {fileID: 6592605061203936232}
   - {fileID: 6265268896591483439}
   - {fileID: 1844670941}
-  - {fileID: 8815202268321395012}
   - {fileID: 543450652068709489}
+  - {fileID: 8815202268321395012}
   - {fileID: 451759537}
   - {fileID: 2022519797}
   - {fileID: 1964663508}
@@ -47533,7 +47553,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1659044266}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450652344761394 stripped
 Transform:

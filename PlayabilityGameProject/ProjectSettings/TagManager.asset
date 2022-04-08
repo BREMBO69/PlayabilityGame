@@ -7,6 +7,8 @@ TagManager:
   - ResetAbility
   - Bullet
   - SpawnPoint
+  - AbilityBox
+  - Enemy
   layers:
   - Default
   - TransparentFX

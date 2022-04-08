@@ -19,7 +19,9 @@ public class MainPlayerMovement : MonoBehaviour
     public GameObject abilityMenu;
     private Rigidbody rb;
 
+    //Ability Checkers
     public bool reversedControl = false;
+    public bool abilityJump = false;
 
     private bool isCollided;
 
@@ -38,6 +40,16 @@ public class MainPlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown("left shift"))
+        {
+            movementSpeed = 10;
+        }
+
+        if (Input.GetKeyUp("left shift"))
+        {
+            movementSpeed = 5;
+        }
+
         if (reversedControl == false)
         {
             vertical = Input.GetAxis("Vertical");
@@ -97,7 +109,7 @@ public class MainPlayerMovement : MonoBehaviour
         limitJumps = true;
         numberOfJumps = 0;
 
-        if (other.gameObject.tag == "ResetAbility")
+        if (other.gameObject.tag == "AbilityBox")
         {
             isCollided = true;
             abilityMenu.SetActive(true);
@@ -107,7 +119,7 @@ public class MainPlayerMovement : MonoBehaviour
 
         else if (other.gameObject.tag == "Bullet")
         {
-            movementSpeed = movementSpeed * 2;
+
         }
     }
     void OnCollisionExit(Collision other)
@@ -120,6 +132,7 @@ public class MainPlayerMovement : MonoBehaviour
     public void Jump2xAbility()
     {
         maxJumps = 2.0f;
+        abilityJump = true;
         abilityMenu.SetActive(false);
     }
 
